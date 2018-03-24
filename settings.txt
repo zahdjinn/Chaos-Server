@@ -1,0 +1,4 @@
+D:\OneDrive\Documents\Game Addons and Utilities\Darkages\DA TOOLs\ChaosServer\
+D:\OneDrive\Documents\Game Addons and Utilities\Darkages\DA TOOLs\ChaosServer\KRU\
+ChaosServer.dynu.net
+localhost:6379
