@@ -16,7 +16,6 @@ using System.Collections.Generic;
 
 namespace Chaos
 {
-    //will need to figure out how to properly serialize this only a single time
     [JsonObject(MemberSerialization.OptIn)]
     internal sealed class Guild : IEnumerable
     {
