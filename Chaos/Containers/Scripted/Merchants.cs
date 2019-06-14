@@ -48,7 +48,7 @@ namespace Chaos
                                 new DialogMenuItem(2, "Teleport")
                             }))),
                 new Merchant("Frank The Great", (17501, 5, 2), 34, Direction.East, 7),
-                new Merchant("Maribel", (18000, 2, 5), 447, Direction.East, 9),
+                new Merchant("Maribel", (18007, 2, 11), 447, Direction.East, 9),
                 //new Merchant("Markus", 364, new Point(2, 4), Game.World.Maps[18002], Direction.East, 15),
                 new Merchant("Am I Pretty?", (8984, 10, 8), 627, Direction.South, 0,
                     new MerchantMenu("Do it. Tell me I'm beautiful.", MenuType.Menu,

@@ -36,7 +36,7 @@ namespace Chaos
         internal const string DEVELOPER_GUILD_NAME = "Chaos Team";
         internal const int ITEM_STACK_MAX = 255;
 
-        internal static readonly Location STARTING_LOCATION = (8984, 10, 10);
+        internal static readonly Location STARTING_LOCATION = (18006, 23, 23);
         internal static readonly Location DEATH_LOCATION = (5031, 15, 15);
         internal static readonly Location NO_NATION_LOCATION = (8984, 10, 10);
         internal static readonly Location SUOMI_LOCATION = (8984, 10, 10);

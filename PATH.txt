@@ -1,2 +1,2 @@
-C:\Users\Sichi\Desktop\ChaosProject
-chaosserver.dynu.net
+C:\Users\Michael\Documents\GitHub\Chaos-Server\ChaosProject
+127.0.0.1

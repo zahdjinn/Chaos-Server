@@ -208,6 +208,7 @@ namespace Chaos
                     {
                         tUser.Client.Enqueue(ServerPackets.DisplayUser(u2s));   //send it all the users
                         u2s.Client.Enqueue(ServerPackets.DisplayUser(tUser));   //send all the users this user as well
+                        u2s.Client.Enqueue(ServerPackets.ServerMessage(ServerMessageType.AdminMessage, "{=c" + tUser.Name + ", a " + tUser.BaseClass + ", has logged into Cogadh."));
                     }
 
                     tUser.Client.Enqueue(ServerPackets.DisplayItemMonster(itemMonsterToSend.ToArray()));    //send it all the items, monsters, and merchants

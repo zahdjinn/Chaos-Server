@@ -1,1 +1,0 @@
-Metafiles are incomlete right now, the tool will eventually be able to create new metafiles for use on the server.

@@ -243,7 +243,11 @@ namespace Chaos
         {
             //client requests to exit first, you have to confirm
             if (requestExit)
+            {
                 client.Enqueue(ServerPackets.ConfirmExit());
+                foreach (Client usr in Server.WorldClients)
+                    usr.SendServerMessage(ServerMessageType.AdminMessage, "{=c" + client.User.Name + " has went to sleep.");
+            }
             else
                 client.Redirect(new Redirect(client, ServerType.Login));
         }
@@ -416,6 +420,9 @@ namespace Chaos
 
                 //add the user to the map that it's supposed to be on
                 client.User.Map.AddObject(client.User, client.User.Point);
+                //Let's announce their entrance into Cogadh
+                foreach (Client usr in Server.WorldClients)
+                    usr.SendServerMessage(ServerMessageType.AdminMessage, "{=c" + client.User.Name + " has awoke.");
                 //request their profile picture and text so we can update it if they changed it
                 client.Enqueue(ServerPackets.RequestPersonal());
             }

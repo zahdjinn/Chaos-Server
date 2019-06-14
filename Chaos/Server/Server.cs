@@ -80,7 +80,7 @@ namespace Chaos
             Redirects = new List<Redirect>();
             MetaFiles = new List<MetaFile>();
 
-            byte[] notif = Encoding.GetEncoding(949).GetBytes($@"{{={(char)MessageColor.Orange}Under Construction");
+            byte[] notif = Encoding.GetEncoding(949).GetBytes($@"{{={(char)MessageColor.Orange}Welcome to the Cogadh project!");
             LoginMessageCheckSum = Crypto.Generate32(notif);
 
             using (MemoryStream compressor = ZLIB.Compress(notif))
