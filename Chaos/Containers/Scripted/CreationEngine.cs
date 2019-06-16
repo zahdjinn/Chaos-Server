@@ -47,6 +47,7 @@ namespace Chaos
             AddItem("Test Weapon", TestWeapon, EquipItem);
             AddItem("Male Tattered Robes", MaleTatteredRobes, EquipItem);
             AddItem("Female Tattered Robes", FemaleTatteredRobes, EquipItem);
+            AddItem("Winiphira Ticket", WiniphiraTicket, NormalItem);
             #endregion
 
             #region Skills
@@ -286,6 +287,8 @@ namespace Chaos
         private Item TestWeapon(uint count) => new Item(new ItemSprite(3254, 186), 0, "Test Weapon", EquipmentSlot.Weapon, 10000, 10000, 5, Gender.Unisex, false);
         private Item MaleTatteredRobes(uint count) => new Item(new ItemSprite(1108, 208), 0, "Male Tattered Robes", EquipmentSlot.Armor, 10000, 10000, 2, Gender.Male, false);
         private Item FemaleTatteredRobes(uint count) => new Item(new ItemSprite(1109, 208), 0, "Female Tattered Robes", EquipmentSlot.Armor, 10000, 10000, 2, Gender.Female, false);
+
+        private Item WiniphiraTicket(uint count) => new Item(new ItemSprite(12203, 0), 0, "Winiphira Ticket", true, count, 1, true);
         #endregion
         #region Scripted Items
         #endregion

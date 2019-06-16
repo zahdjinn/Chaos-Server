@@ -67,21 +67,28 @@ namespace Chaos
                 TextEntryDialog(PursuitIds.ForceGive, 16, "Give an Item Name, and User Name pair... \"Item Name:User Name\"", 30, 0),
 
                 //Tutorial
-                NormalDialog(PursuitIds.None, 9, false, true, "I thought you'd never wake up. Greetings and welcome to my home. ", 10),
-                ItemOrMerchantMenuDialog(PursuitIds.None, 10, "I'm sure you have plenty of questions for me...",
+                NormalDialog(PursuitIds.None, 9, false, true, "Hello! I can assist you in reallocating stats. This is a permanent process and others will be able to see that you have modified your soul. One Winiphira ticket is the cost.", 10),
+                ItemOrMerchantMenuDialog(PursuitIds.None, 10, "Please select a stat to modify! This process costs one Winphira ticket.",
                     new DialogMenu(
                         new List<DialogMenuItem>()
                         {
-                            new DialogMenuItem(11, "Where am I?"),
-                            new DialogMenuItem(12, "Who are you?"),
-                            new DialogMenuItem(13, "I'm bored. Got any jobs?"),
-                            new DialogMenuItem(14, "There is a slight breeze.."),
+                            new DialogMenuItem(11, "STR"),
                         })),
-                NormalDialog(PursuitIds.None, 11, true, true, "You're in my humble home! On the continent of Temauir...? Jeez, how hard did you hit your head climbing off the bunks. ", 10),
-                NormalDialog(PursuitIds.None, 12, true, true, "Maribel is the name! You're in my home in which my husband runs a potion shop out of. He's the best alchemist this side of Tyruan.", 10),
-                NormalDialog(PursuitIds.None, 13, true, true, "Go seek my husband Markus. He will definately have a job for you around here.", 10),
-                NormalDialog(PursuitIds.GiveTatteredRobe, 14, true, true, "*she looks down and her cheeks go red* I almost forgot! Here's your clothes..", 10),
-                NormalDialog(PursuitIds.None, 15, false, false, "Do something useful with yourself and go clean the basement of vermin.", 0),
+                 ItemOrMerchantMenuDialog(PursuitIds.None, 11, "Please select a stat to modify STR to..",
+                    new DialogMenu(
+                        new List<DialogMenuItem>()
+                        {
+                            new DialogMenuItem(12, "Int"),
+                        })),
+                 ItemOrMerchantMenuDialog(PursuitIds.None, 12, "All sales are FINAL! Do you accept?",
+                    new DialogMenu(
+                        new List<DialogMenuItem>()
+                        {
+                            new DialogMenuItem(18, "Yes."),
+                            new DialogMenuItem(19, "No."),
+                        })),
+                 NormalDialog(PursuitIds.STRtoINT, 18, true, true, "It will be so.", 9),
+                 NormalDialog(PursuitIds.None, 19, false, false, "Then leave. The door will be at your backside."),
             };
 
             foreach(Dialog d in DialogList)

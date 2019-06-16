@@ -61,7 +61,6 @@ namespace Chaos
                                 new PursuitMenuItem(PursuitIds.BecomeMonk, "Become a monk"),
                                 new PursuitMenuItem(PursuitIds.BecomeRogue, "Become a rogue")
                             }))),
-
             };
 
             MerchantDic = MerchantList.ToDictionary(m => m.Name, m => m);

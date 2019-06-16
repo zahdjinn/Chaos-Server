@@ -39,12 +39,45 @@ namespace Chaos
             { PursuitIds.BecomeMonk, new PursuitDelegate(BecomeMonk) },
             { PursuitIds.BecomeRogue, new PursuitDelegate(BecomeRogue) },
             { PursuitIds.GiveTatteredRobe, new PursuitDelegate(GiveTatteredRobe) },
+            { PursuitIds.STRtoINT, new PursuitDelegate(STRtoINT) },
         });
 
         internal static PursuitDelegate Activate(PursuitIds pid) => PursuitList[pid];
 
         #region PursuitEffects
         private static void None(Client client, Server server, bool closing = false, byte menuOption = 0, string userInput = null) { }
+
+        private static void STRtoINT(Client client, Server server, bool closing = false, byte menuOption = 0, string userInput = null)
+        {
+            if (client.User.Inventory.Contains("Winiphira Ticket"))
+            {
+                if (client.User.Legend.Contains("modStats") && client.User.Legend["modStats"].Count == 0)
+                {
+                    client.User.Legend.Add(new LegendMark(GameTime.Now, "Modified spirit using Winiphira", "modStats", MarkIcon.Heart, MarkColor.LightGreen));
+                }
+                if (client.User.Legend["modStats"].Count >= 10)
+                {
+                    client.SendServerMessage(ServerMessageType.OrangeBar1, @"You have the maximum stat modifications allowed.");
+                }
+                if (client.User.Legend["modStats"].Count < 10)
+                {
+                    if (client.User.Attributes.BaseStr > 1)
+                    {
+                        client.User.Inventory["Winiphira Ticket"].Count--;
+                        client.User.Attributes.BaseStr--;
+                        client.User.Attributes.BaseInt++;
+                        client.SendAttributes(StatUpdateType.Primary);
+                        client.SendServerMessage(ServerMessageType.AdminMessage, @"You feel weaker yet understand more.");
+                    }
+                    else if (client.User.Attributes.BaseStr == 1)
+                        client.SendServerMessage(ServerMessageType.OrangeBar1, @"Unacceptable. Doing so would make your spirit leave the body.");
+                    else if (client.User.Attributes.BaseInt >= 180)
+                        client.SendServerMessage(ServerMessageType.OrangeBar1, @"Unacceptable. Your mind cannot comprehend more than it has.");
+                }
+            }
+            else
+                client.SendServerMessage(ServerMessageType.OrangeBar1, @"Come back when you have what I asked for.");
+        }
 
         private static void GiveTatteredRobe(Client client, Server server, bool closing = false, byte menuOption = 0, string userInput = null)
         {

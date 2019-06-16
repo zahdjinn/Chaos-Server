@@ -128,6 +128,12 @@ namespace Chaos
                 return Objects[obj.Slot].Equals(obj);
         }
 
+        internal bool Contains(string key)
+        {
+            lock (Sync)
+                return Objects.Any(m => m.Name.Contains(key));
+        }
+
         /// <summary>
         /// Attempts to synchronously add a stackable item.
         /// </summary>

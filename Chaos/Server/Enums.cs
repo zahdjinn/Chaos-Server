@@ -197,6 +197,7 @@ namespace Chaos
         BecomeRogue = 12,
         GiveTatteredRobe = 13,
         ForceGive = 14,
+        STRtoINT = 15,
     }
     #endregion
 

@@ -94,5 +94,16 @@ namespace Chaos
             lock (Sync)
                 return Marks.RemoveAll(m => m.Key.Equals(key, StringComparison.CurrentCultureIgnoreCase)) != 0;
         }
+
+        /// <summary>
+        /// Synchronously retreives the legend mark at key location.
+        /// </summary>
+        /// <param name="key">Key of the mark to check exists.</param>
+        /// <returns>Legend Mark Key Exist</returns>
+        internal bool Contains(string key)
+        {
+            lock (Sync)
+                return Marks.Any(m => m.Key.Contains(key));
+        }
     }
 }
